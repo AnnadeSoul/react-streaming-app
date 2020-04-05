@@ -1,0 +1,1 @@
+export { configureAppStore as default } from './configureStore';

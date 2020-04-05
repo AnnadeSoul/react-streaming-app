@@ -1,0 +1,1 @@
+export const isFirstGreater = (first, second) => first > second;
