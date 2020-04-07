@@ -28,10 +28,10 @@ body.dark-mode {
       height: 86px;
     }
  
-    .green {
-      color: $color-green;
+    .green { 
+      color: $color-green; 
     }
-    .red {
+    .red { 
       color: $color-red; 
     }
  
@@ -48,7 +48,7 @@ body.dark-mode {
       margin-top: 16px; 
     }
     .mb-16 { 
-      margin-bottom: 16px; 
+      margin-bottom: 16px;
     }
     .mb-5 { 
       margin-bottom: 5px; 
@@ -56,25 +56,25 @@ body.dark-mode {
     .mr-10 { 
       margin-right: 10px; 
     }
-    .ml-5 {
+    .ml-5 { 
       margin-left: 5px; 
     }
-    .mb-15 {
+    .mb-15 { 
       margin-bottom: 15px; 
     }
-    .text {
+    .text { 
       font-size: 30px; 
     }
-    .text-12 {
+    .text-12 { 
       font-size: 12px; 
     }
-    .text-14 {
+    .text-14 { 
       font-size: 14px; 
     }
-    .date {
+    .date { 
       font-size: 12px; 
     }
-    .text-center {
+    .text-center { 
       text-align: center; 
     }
     .icon {
@@ -120,6 +120,7 @@ body.dark-mode {
  
 @media only screen and (max-width: 812px) and (min-width: 300px) {
   .container {
+    max-width: 812px;
     padding-left: 1rem;
     padding-right: 1rem;
   }
