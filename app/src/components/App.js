@@ -6,7 +6,10 @@ import {
   fetchAAPLDataSucceeded,
   fetchAAPLDataFailed
 } from '../redux/ducks/stockTicker';
+import { useTheme } from '../hooks';
 import { GlobalLoader, Error } from './common';
+import Header from './app-header';
+import Footer from './app-footer';
 
 const App = ({
   stockTicker,
@@ -14,6 +17,7 @@ const App = ({
   fetchAAPLDataFailed
 }) => {
   const { loading, data, error } = stockTicker;
+  const { handleThemeChange } = useTheme();
   
   useEffect(() => {
     connectTicker({
@@ -23,9 +27,29 @@ const App = ({
     });
   }, [fetchAAPLDataSucceeded, fetchAAPLDataFailed]);
 
-  if (error) return <Error />;
-  if (loading) return <GlobalLoader />;
-  if (!loading && data) return <p>Hi</p>;
+  const renderCharts = (error, loading, data) => (
+    (!loading && !error && data) && (
+      <div className="container">Charts</div>
+    )
+  );
+
+  const renderError = (error) => (
+    error && <Error />
+  );
+
+  const renderLoading = (loading) => (
+    loading && <GlobalLoader />
+  );
+
+  return (
+    <div className="stock-ticker">
+      <Header handleToggle={handleThemeChange} />
+      {renderError(error)}
+      {renderLoading(loading)}
+      {renderCharts(error, loading, data)}
+      <Footer />
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({ stockTicker: state.stockTicker });
