@@ -9,6 +9,7 @@ import {
 import { useTheme } from '../hooks';
 import { GlobalLoader, Error } from './common';
 import Header from './app-header';
+import Charts from './charts';
 import Footer from './app-footer';
 
 const App = ({
@@ -29,7 +30,7 @@ const App = ({
 
   const renderCharts = (error, loading, data) => (
     (!loading && !error && data) && (
-      <div className="container">Charts</div>
+      <div className="container"><Charts /></div>
     )
   );
 

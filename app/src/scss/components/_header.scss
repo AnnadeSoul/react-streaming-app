@@ -3,6 +3,9 @@
 @import 'common/apple-switch';
 
 .stock-ticker__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: $background-color-white;
   display: flex;
   align-items: center;
