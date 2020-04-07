@@ -1,0 +1,1 @@
+export { connectTicker as default } from './tickerService';

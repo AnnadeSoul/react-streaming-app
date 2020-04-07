@@ -1,0 +1,44 @@
+@import 'variables';
+@import './common/loader';
+
+.content {
+  margin-top: 15vh;
+  margin-bottom: 20vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 16px;
+  grid-template-rows: 1fr 5vh;
+  grid-row-gap: 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "main sidebar"
+    "footer footer";
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  &__chart-main {
+    grid-area: main;
+    display: flex;
+    flex-flow: column wrap;
+  }
+  &__chart-sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+  }
+  &__chart-footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 812px) and (min-width: 300px) {
+  .content,
+  .content__header--centered,
+  .content__chart-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
